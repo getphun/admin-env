@@ -1,0 +1,45 @@
+<?php $this->partial('shared/header'); ?>
+
+<form method="post" class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>
+                        <code>production</code><br>
+                        Optimize system to work on production environment.
+                        The system try to make everything work faster by 
+                        implementing cache system. If in doubt, use this.
+                    </p>
+                    <p>
+                        <code>development</code><br>
+                        Ignore caching system to allow <em>on server development</em>
+                        to get the result instantly just by reloading the page after
+                        updating files on server. Not recommended on live server.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="page-header">
+                <div class="pull-right">
+                    <button class="btn btn-primary">Save</button>
+                </div>
+                <h3>System Environment</h3>
+            </div>
+            
+            <?php if($saved): ?>
+                <div class="alert alert-success"><strong>Success!</strong> The environment updated.</div>
+            <?php endif; ?>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <?= $this->form->field('env'); ?>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</form>
+
+<?php $this->partial('shared/footer'); ?>
